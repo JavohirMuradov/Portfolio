@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #98EA98;
+    --secondary: #4F4665;
+  }
+
+  .dark {
+    --primary: #4F4665;
+    --secondary: #98EA98;
+  }
+}
