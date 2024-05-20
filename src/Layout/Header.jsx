@@ -1,51 +1,51 @@
-import { Link } from "react-router-dom"
-import Switcher from "../utils/Theme/Switcher"
-import { useTranslation } from "react-i18next"
-import { useEffect, useState } from "react"
-import { IconButton, MobileNav } from "@material-tailwind/react"
+import { Link } from "react-router-dom";
+import Switcher from "../utils/Theme/Switcher";
+import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
+import { Collapse, IconButton} from "@material-tailwind/react";
 
 const Header = () => {
-  var { t } = useTranslation()
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation("header");
   const [openNav, setOpenNav] = useState(false);
-  var [language, setLanguage] = useState('en')
-  console.log(language);
-  useEffect(() => {
-    i18n.changeLanguage(language)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [language])
-  useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false),
-    );
-  }, []);
+  const [language, setLanguage] = useState('en');
 
+  useEffect(() => {
+    i18n.changeLanguage(language);
+    const handleResize = () => window.innerWidth >= 960 && setOpenNav(false);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [language, i18n]);
+
+  const navItems = [
+    { path: "/home", label: t("li") },
+    { path: "/contact", label: t("li1") },
+    { path: "/projects", label: t("li2") },
+    { path: "/about", label: t("li3") }
+  ];
 
   return (
-    <header className="bg-primary font-forum text-lg text-secondary sticky py-5 top-0 duration-300">
-      <div className="container flex flex-row items-center justify-between">
-        <h1 className="font-julia text-5xl"><Link to={"/"}>Java</Link></h1>
+    <header className="bg-primary font-forum text-lg text-secondary sticky py-5 top-0 z-50 duration-300">
+      <div className="container flex items-center justify-between">
+        <h1 className="font-julia text-5xl">
+          <Link to="/">Java</Link>
+        </h1>
         <nav className="hidden lg:flex">
-          <ul className="flex flex-row items-center gap-10">
-            <li>
-              <Link to={"/home"}>{t("header.li")}</Link>
-            </li>
-            <li>
-              <Link to={"/contact"}>{t("header.li1")}</Link>
-            </li>
-            <li>
-              <Link to={"/projects"}>{t("header.li2")}</Link>
-            </li>
-            <li>
-              <Link to={"/about"}>{t("header.li3")}</Link>
-            </li>
+          <ul className="flex items-center gap-10">
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <Link to={item.path}>{item.label}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
-        <div className="flex flex-row gap-3">
+        <div className="flex gap-3 items-center">
           <Switcher />
           <div className="relative">
-            <select defaultValue={"en"} onChange={(e) => setLanguage(e.target.value)} name="" id="" className="bg-primary text-secondary appearance-none duration-300 text-xl pr-5 outline-none">
+            <select
+              defaultValue="en"
+              onChange={(e) => setLanguage(e.target.value)}
+              className="bg-primary text-secondary appearance-none duration-300 text-xl pr-5 outline-none"
+            >
               <option value="en">en</option>
               <option value="ru">ru</option>
               <option value="uz">uz</option>
@@ -61,56 +61,28 @@ const Header = () => {
             onClick={() => setOpenNav(!openNav)}
           >
             {openNav ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                className="h-6 w-6"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </IconButton>
         </div>
       </div>
-      <MobileNav open={openNav} className="w-full h-full bg-primary">
+      <Collapse open={openNav} className="w-full h-full bg-primary">
         <ul className="flex flex-col items-center gap-4">
-          <li>
-            <Link to={"/home"}>{t("header.li")}</Link>
-          </li>
-          <li>
-            <Link to={"/contact"}>{t("header.li1")}</Link>
-          </li>
-          <li>
-            <Link to={"/projects"}>{t("header.li2")}</Link>
-          </li>
-          <li>
-            <Link to={"/about"}>{t("header.li3")}</Link>
-          </li>
+          {navItems.map((item, index) => (
+            <li key={index}>
+              <Link to={item.path}>{item.label}</Link>
+            </li>
+          ))}
         </ul>
-      </MobileNav>
-    </header >
-  )
-}
+      </Collapse>
+    </header>
+  );
+};
 
-export default Header
+export default Header;
