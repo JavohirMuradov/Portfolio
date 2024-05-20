@@ -23,11 +23,11 @@ const Header = () => {
 
 
   return (
-    <header className="bg-primary font-forum text-lg text-secondary sticky py-5 top-0">
+    <header className="bg-primary font-forum text-lg text-secondary sticky py-5 top-0 duration-300">
       <div className="container flex flex-row items-center justify-between">
         <h1 className="font-julia text-5xl"><Link to={"/"}>Java</Link></h1>
         <nav className="hidden lg:flex">
-          <ul className="flex flex-row items-center gap-5">
+          <ul className="flex flex-row items-center gap-10">
             <li>
               <Link to={"/home"}>{t("header.li")}</Link>
             </li>
@@ -42,10 +42,10 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <div className="flex flex-row gap-1">
+        <div className="flex flex-row gap-3">
           <Switcher />
           <div className="relative">
-            <select defaultValue={"en"} onChange={(e) => setLanguage(e.target.value)} name="" id="" className="bg-primary text-secondary appearance-none text-xl pr-5 outline-none">
+            <select defaultValue={"en"} onChange={(e) => setLanguage(e.target.value)} name="" id="" className="bg-primary text-secondary appearance-none duration-300 text-xl pr-5 outline-none">
               <option value="en">en</option>
               <option value="ru">ru</option>
               <option value="uz">uz</option>

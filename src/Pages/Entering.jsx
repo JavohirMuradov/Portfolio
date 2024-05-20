@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 const Entering = () => {
     const { t } = useTranslation()
     return (
-        <main className="bg-primary text-secondary w-full h-full font-forum">
+        <main className="bg-primary duration-300 text-secondary w-full h-full font-forum text-center lg:text-start py-10 lg:py-0">
             <section className="flex h-full lg:h-screen container flex-col items-center justify-center lg:flex-row lg:justify-evenly">
                 <img className="w-[400px]" src="https://ik.imagekit.io/ohgne7kibp/portfolio/Intersect.png?updatedAt=1716138845794" alt="frontend developer" />
-                <div className="w-1/2 flex flex-col items-start gap-3">
+                <div className="w-1/2 flex flex-col items-center lg:items-start gap-3">
                     <h1 className="text-5xl italic">{t("entering.name")}</h1>
                     <span className="text-3xl italic">{t("entering.developer")}</span>
                     <button className="bg-custom-radial text-[#98EA98] text-md py-2 px-4 rounded-full">
