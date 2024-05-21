@@ -43,6 +43,16 @@ var en = {
         section2: {
             h1: "My Projects"
         },
+        contact: {
+            h1: "Contact with me",
+            h2: "Get in touch",
+            span: "Hit me up and let's embark on an exhilarating journey of innovation and creativity together. Your next big project deserves the attention to detail and passion that I bring to every line of code.",
+            send: "Send me an email",
+        },
+        about: {
+            h1: "Hey there! I'm Javohir Muradov, a frontend developer born in 2010 (yes, I'm young, but my passion for coding knows no bounds!).",
+            p: "Fresh out of my frontend developer education just a month ago, I'm already diving headfirst into the world of web development, armed with React, Tailwind CSS, JavaScript, HTML, and CSS.For me, coding isn't just a job – it's a creative outlet where I can bring ideas to life and build digital experiences that leave a lasting impact. With React, I breathe life into static websites, while Tailwind CSS helps me craft sleek and responsive designs with ease. JavaScript, HTML, and CSS? Well, they're the building blocks of my digital playground.But beyond the screen and code, I'm all about curiosity and continuous learning. Each project is a chance to grow, to push boundaries, and to refine my skills as a developer.When I'm not typing away at my keyboard, you might find me exploring new technologies, diving into the latest tech trends, or simply enjoying the outdoors.Join me on this journey as we turn ideas into reality, one line of code at a time!"
+        }
     },
 }
 export default en

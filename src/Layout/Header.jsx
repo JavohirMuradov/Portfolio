@@ -24,8 +24,8 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-primary font-forum text-lg text-secondary sticky py-5 top-0 z-50 duration-300">
-      <div className="container flex items-center justify-between">
+    <header className="bg-primary font-forum text-lg text-secondary sticky py-5 top-0 pb-5 lg:pb-0 z-50 duration-300 h-[12vh]">
+      <div className="container h-full flex items-center justify-between">
         <h1 className="font-julia text-5xl">
           <Link to="/">Java</Link>
         </h1>
@@ -75,7 +75,7 @@ const Header = () => {
       <Collapse open={openNav} className="w-full h-full bg-primary">
         <ul className="flex flex-col items-center gap-4">
           {navItems.map((item, index) => (
-            <li key={index}>
+            <li key={index} className="py-2">
               <Link to={item.path}>{item.label}</Link>
             </li>
           ))}

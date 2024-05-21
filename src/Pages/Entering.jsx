@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import useDarkSide from "../utils/Theme/useDarkSide";
 
 const Entering = () => {
-    const [colorTheme ] = useDarkSide()
+    const [colorTheme, setTheme] = useDarkSide()
     const { t } = useTranslation("entering")
     return (
         <main className="bg-primary duration-300 text-secondary w-full h-full font-forum text-center lg:text-start py-10 lg:py-0">
@@ -15,9 +15,11 @@ const Entering = () => {
                 <div className="w-1/2 flex flex-col items-center lg:items-start gap-3">
                     <h1 className="text-5xl italic">{t("name")}</h1>
                     <span className="text-3xl italic">{t("developer")}</span>
-                    <button className="bg-custom-radial dark:bg-dark-custom-radial text-primary text-md py-2 px-4 rounded-full">
-                        <Link to={"/home"}>{t("btn")}</Link>
-                    </button>
+                    <Link to={"/home"}>
+                        <button className="bg-custom-radial dark:bg-dark-custom-radial text-primary text-md py-2 px-4 rounded-full">
+                            {t("btn")}
+                        </button>
+                    </Link>
                     <div className="flex flex-row items-center gap-2">
                         <Link to={"tel:+998909653646"} target="_blank" rel="noreferrer">
                             <button className="bg-radial p-2 rounded-full dark:bg-dark-radial">
@@ -41,7 +43,7 @@ const Entering = () => {
                             target="_blank" rel="noreferrer">
                             <button
                                 className="bg-radial p-2 rounded-full dark:bg-dark-radial">
-                                <SiGmail className="w-6 h-6 text-primary" color={colorTheme === "dark" ? "#9BEA9B" : "#4F4665"}/>
+                                <SiGmail className="w-6 h-6 text-primary" color={colorTheme === "dark" ? "#9BEA9B" : "#4F4665"} />
                             </button>
                         </Link>
                     </div>

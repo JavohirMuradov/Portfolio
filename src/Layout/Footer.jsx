@@ -7,25 +7,25 @@ import useDarkSide from "../utils/Theme/useDarkSide";
 const Footer = () => {
   var [colorTheme] = useDarkSide()
   return (
-    <footer className="bg-primary text-secondary duration-300">
-      <div className="container flex flex-row justify-between border-t border-t-secondary py-10">
+    <footer className="bg-primary text-secondary duration-300 h-[12vh]">
+      <div className="container flex flex-row justify-between border-t border-t-secondary h-full pt-5 items-center">
         <h1 className="font-julia text-5xl"><Link to={"/"}>Java</Link></h1>
         <div className="flex flex-row items-center gap-2">
           <Link to={"tel:+998909653646"} target="_blank" rel="noreferrer">
             <button className="bg-radial p-2 rounded-full dark:bg-dark-radial">
-              <FaPhone className="w-6 h-6 text-primary" color={colorTheme === "dark" ? "#4F4665": "#9BEA9B"} />
+              <FaPhone className="w-6 h-6 text-primary" color={colorTheme === "dark" ? "#9BEA9B" : "#4F4665"} />
             </button>
           </Link>
           <Link to={"https://t.me/JavaMiyagi"} target="_blank" rel="noreferrer">
             <button
               className="bg-radial p-2 rounded-full dark:bg-dark-radial">
-              <FaTelegram className="w-6 h-6 text-primary" color={colorTheme === "dark" ? "#4F4665": "#9BEA9B"} />
+              <FaTelegram className="w-6 h-6 text-primary" color={colorTheme === "dark" ? "#9BEA9B" : "#4F4665"} />
             </button>
           </Link>
           <Link to={"https://github.com/JavohirMuradov"} target="_blank" rel="noreferrer">
             <button
               className="bg-radial p-2 rounded-full dark:bg-dark-radial">
-              <FaGithub className="w-6 h-6 text-primary" color={colorTheme === "dark" ? "#4F4665": "#9BEA9B"} />
+              <FaGithub className="w-6 h-6 text-primary" color={colorTheme === "dark" ? "#9BEA9B" : "#4F4665"} />
             </button>
           </Link>
           <Link
@@ -33,7 +33,7 @@ const Footer = () => {
             target="_blank" rel="noreferrer">
             <button
               className="bg-radial p-2 rounded-full dark:bg-dark-radial">
-              <SiGmail className="w-6 h-6 text-primary" color={colorTheme === "dark" ? "#4F4665": "#9BEA9B"} />
+              <SiGmail className="w-6 h-6 text-primary" color={colorTheme === "dark" ? "#9BEA9B" : "#4F4665"} />
             </button>
           </Link>
         </div>

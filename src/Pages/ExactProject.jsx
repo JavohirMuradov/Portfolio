@@ -26,7 +26,7 @@ const ExactProject = () => {
                 name: "42.uz",
                 img: "https://ik.imagekit.io/ohgne7kibp/portfolio/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-05-20%20190400.png?updatedAt=1716214070800",
                 description: t("42.description"),
-                href: ""
+                href: "https://42-tawny.vercel.app/"
             },
             "Eshik Oyna": {
                 name: "Eshik Oyna",
@@ -38,25 +38,25 @@ const ExactProject = () => {
                 name: "Imba Studio",
                 img: "https://ik.imagekit.io/ohgne7kibp/portfolio/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-05-20%20230515.png?updatedAt=1716228346525",
                 description: t("Imba-Studio.description"),
-                href: ""
+                href: "https://imba-studio.vercel.app/"
             },
             "Where is the country?": {
                 name: "Where is the country? ",
                 img: "https://ik.imagekit.io/ohgne7kibp/portfolio/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-05-20%20190642.png?updatedAt=1716214070844",
                 description: t("Where-is-the-country?.description"),
-                href: ""
+                href: "https://countries-api-gold-nine.vercel.app/"
             },
             "Scoot": {
                 name: "Scoot",
                 img: "https://ik.imagekit.io/ohgne7kibp/portfolio/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-05-20%20225327.png?updatedAt=1716227674562",
                 description: t("Scoot.description"),
-                href: ""
+                href: "https://scoot-drab.vercel.app/"
             },
             "Cafena": {
                 name: "Cafena",
                 img: "https://ik.imagekit.io/ohgne7kibp/portfolio/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-05-20%20230220.png?updatedAt=1716228172031",
                 description: t("Cafena.description"),
-                href: ""
+                href: "https://cafena-five.vercel.app/"
             },
         }
         return projectImageMap[project] || ""
@@ -65,17 +65,19 @@ const ExactProject = () => {
     const project1 = getImageSource(project)
 
     return (
-        <section className="w-full bg-primary text-secondary duration-300 h-full lg:max-h-[64vh] 2xl:max-h-[90vh] text-center lg:text-start">
-            <div className="container flex flex-col items-center lg:flex-row justify-between gap-10">
-                <h1>{project.name}</h1>
-                <div className="flex flex-col items-center lg:flex-row lg:items-start justify-between gap-10">
-                    <div className="lg:w-1/2 w-full">
-                        {project1 && <img src={project1.img} alt={project.name} />}
+        <section className="w-full h-full py-10 bg-primary flex flex-row items-center justify-center text-secondary duration-300 text-center">
+            <div className="container flex flex-col items-center justify-between gap-10 h-full">
+                <h1 className="text-5xl">{project1.name}</h1>
+                <div className="flex flex-col items-center justify-between gap-10">
+                    <div className="w-full">
+                        {project1 && <img src={project1.img} className="w-full" alt={project.name} />}
                     </div>
-                    <div className="lg:w-1/2 w-full flex flex-col gap-3">
-                        <h1>{project1.name}</h1>
-                        <p>{project1.description}</p>
-                        <Link></Link>
+                    <div className="w-full flex flex-col gap-3">
+                        <h1 className="text-3xl">{project1.name}</h1>
+                        <p className="text-lg">{project1.description}</p>
+                        <Link to={project1.href}>
+                            <button className="bg-custom-radial dark:bg-dark-custom-radial text-primary text-md py-2 px-4 rounded-full">{project1.name}</button>
+                        </Link>
                     </div>
                 </div>
             </div>

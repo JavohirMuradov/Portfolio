@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 // eslint-disable-next-line react/prop-types
-const Card = ({ img, alt, text, path }) => {
+const MyCard = ({ img, alt, text, path }) => {
     return (
         <Link to={path}>
             <div className="w-full h-full bg-secondary text-primary duration-300 rounded-lg hover:scale-110">
@@ -12,4 +12,4 @@ const Card = ({ img, alt, text, path }) => {
     )
 }
 
-export default Card
+export default MyCard
