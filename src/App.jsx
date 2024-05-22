@@ -2,8 +2,8 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Layout from "./Layout/Layout";
 import Home from "./Pages/Home/Home";
-import Contact from "./Pages/Contact/Contact";
-import About from "./Pages/About/About";
+import Contact from "./Pages/Contact";
+import About from "./Pages/About";
 import Entering from "./Pages/Entering";
 import ExactProject from "./Pages/ExactProject";
 import Projects from "./Pages/Projects";
@@ -50,8 +50,17 @@ function App() {
         <title>{getTitle(pathname)}</title>
         <meta name="description" content={getDescription(pathname)} />
       </Helmet>
-      <Routes>
-        <Route path="/" element={<Entering />} />
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Entering />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/exactProject/:name" element={<ExactProject />} />
+        </Routes>
+      </Layout>
+      {/* <Routes>
       </Routes>
       {pathname !== "/" && (
         <Layout>
@@ -64,7 +73,7 @@ function App() {
           </Routes >
         </Layout >
       )
-      }
+      } */}
     </>
   );
 }

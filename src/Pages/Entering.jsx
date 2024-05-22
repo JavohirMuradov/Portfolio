@@ -9,10 +9,10 @@ const Entering = () => {
     const [colorTheme, setTheme] = useDarkSide()
     const { t } = useTranslation("entering")
     return (
-        <main className="bg-primary duration-300 text-secondary w-full h-full font-forum text-center lg:text-start py-10 lg:py-0">
-            <section className="flex h-full lg:h-screen container flex-col items-center justify-center lg:flex-row lg:justify-evenly">
+        <main className="bg-primary duration-300 text-secondary w-full h-max font-forum text-center lg:text-start py-10 lg:py-0">
+            <section className="flex h-full lg:h-[86vh] container flex-col items-center justify-center lg:flex-row lg:justify-evenly">
                 <img className="w-[400px]" src="https://ik.imagekit.io/ohgne7kibp/portfolio/Intersect.png?updatedAt=1716138845794" alt="frontend developer" />
-                <div className="w-1/2 flex flex-col items-center lg:items-start gap-3">
+                <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start gap-3">
                     <h1 className="text-5xl italic">{t("name")}</h1>
                     <span className="text-3xl italic">{t("developer")}</span>
                     <Link to={"/home"}>

@@ -8,7 +8,6 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { useRef } from "react";
-import useDarkSide from "../../utils/Theme/useDarkSide";
 import emailjs from '@emailjs/browser';
 
 const cardsData = [
@@ -24,7 +23,6 @@ const cardsData = [
 const Home = () => {
   const { t } = useTranslation("Home");
   const form = useRef();
-  const { colorTheme } = useDarkSide()
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -35,7 +33,7 @@ const Home = () => {
       })
   };
   return (
-    <main className="bg-primary text-secondary font-forum duration-300">
+    <main className="bg-primary text-secondary font-forum duration-300 pt-36">
       <section className="container flex lg:flex-row flex-col justify-between gap-5 lg:gap-0 items-center text-center lg:text-start">
         <div className="flex flex-col gap-3 w-full lg:w-1/2 items-center lg:items-start">
           <h1 className="text-4xl">{t("hero.h1")}</h1>
@@ -48,7 +46,7 @@ const Home = () => {
           <img src="https://ik.imagekit.io/ohgne7kibp/portfolio/Intersect.png?updatedAt=1716321270387" alt="it developer" />
         </div>
       </section>
-      <section className="container flex flex-col items-center lg:flex-row lg:items-start justify-between text-center lg:text-start py-10">
+      <section className="container flex flex-col-reverse gap-10 items-center lg:flex-row lg:items-start justify-between text-center lg:text-start py-10 mt-10">
         <img src="https://ik.imagekit.io/ohgne7kibp/portfolio/Intersect%20(1).png?updatedAt=1716150006664" alt="" />
         <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start gap-5">
           <h1 className="text-3xl">{t("about.h1")}</h1>

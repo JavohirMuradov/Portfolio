@@ -1,3 +1,6 @@
+import { useTranslation } from "react-i18next";
+import MyCard from "./Home/Card";
+
 const cardsData = [
   { img: "https://ik.imagekit.io/ohgne7kibp/portfolio/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-05-20%20190400.png?updatedAt=1716214070800", alt: "42.uz", text: "42.uz", path: "/projects/exactProject/42" },
   { img: "https://ik.imagekit.io/ohgne7kibp/portfolio/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-05-20%20225401.png?updatedAt=1716227673855", alt: "Eshik Oyna", text: "Eshik Oyna", path: "/projects/exactProject/Eshik_Oyna" },
@@ -8,6 +11,7 @@ const cardsData = [
 ];
 
 const Projects = () => {
+  const { t } = useTranslation()
   return (
     <main className='bg-primary text-secondary'>
       <section className="container flex flex-col items-center mt-10">
