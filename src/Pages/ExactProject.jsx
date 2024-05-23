@@ -12,7 +12,7 @@ const ExactProject = () => {
             "/projects/exactProject/42": "42.uz",
             "/projects/exactProject/Eshik_Oyna": "Eshik Oyna",
             "/projects/exactProject/Imba_Studio": "Imba Studio",
-            "/projects/exactProject/Where_is_the_country?": "Where is the country?",
+            "/projects/exactProject/Where_is_the_country": "Where is the country?",
             "/projects/exactProject/Scoot": "Scoot",
             "/projects/exactProject/Cafena": "Cafena",
             // Add other paths here if needed
@@ -65,7 +65,7 @@ const ExactProject = () => {
     const project1 = getImageSource(project)
 
     return (
-        <section className="w-full h-full py-10 bg-primary flex flex-row items-center justify-center text-secondary duration-300 text-center">
+        <section className="w-full h-full py-10 bg-primary flex flex-row items-center justify-center text-secondary duration-300 text-center pt-10">
             <div className="container flex flex-col items-center justify-between gap-10 h-full">
                 <h1 className="text-5xl">{project1.name}</h1>
                 <div className="flex flex-col items-center justify-between gap-10">

@@ -1,14 +1,13 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Switcher from "../utils/Theme/Switcher";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import { Collapse, IconButton, Select, Option } from "@material-tailwind/react";
+import { Collapse, IconButton } from "@material-tailwind/react";
 
 const Header = () => {
   const { t, i18n } = useTranslation("header");
   const [openNav, setOpenNav] = useState(false);
   const [language, setLanguage] = useState('en');
-  const { pathname } = useLocation()
 
   useEffect(() => {
     i18n.changeLanguage(language);
@@ -25,7 +24,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-primary font-forum text-lg text-secondary fixed w-screen shadow-lg rounded-lg py-5 top-0 pb-5 lg:pb-0 z-50 duration-300 h-[12vh]">
+    <header className="bg-primary font-forum text-lg text-secondary sticky shadow-lg py-5 top-0 z-50 duration-300">
       <div className="container h-full flex items-center justify-between">
         <h1 className="font-julia text-5xl">
           <Link to="/">Java</Link>
@@ -34,7 +33,7 @@ const Header = () => {
           <ul className="flex items-center gap-10">
             {navItems.map((item, index) => (
               <li key={index} className={`group relative`}>
-                <div className="group-hover:scale-x-100 w-full transition duration-700 bg-secondary absolute h-[1px] left-0 bottom-[1px] scale-x-0"></div>
+                <div className="group-hover:scale-x-100 w-full transition duration-300 bg-secondary absolute h-[1px] left-0 bottom-[1px] scale-x-0"></div>
                 <NavLink to={item.path}>{item.label}</NavLink>
               </li>
             ))}

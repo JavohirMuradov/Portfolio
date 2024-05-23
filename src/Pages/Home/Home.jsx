@@ -33,14 +33,14 @@ const Home = () => {
       })
   };
   return (
-    <main className="bg-primary text-secondary font-forum duration-300 pt-36">
+    <main className="bg-primary text-secondary font-forum duration-300 pt-10">
       <section className="container flex lg:flex-row flex-col justify-between gap-5 lg:gap-0 items-center text-center lg:text-start">
         <div className="flex flex-col gap-3 w-full lg:w-1/2 items-center lg:items-start">
           <h1 className="text-4xl">{t("hero.h1")}</h1>
           <p className="text-lg">{t("hero.p")}</p>
-          <button className="bg-custom-radial dark:bg-dark-custom-radial duration-300 text-[#98EA98] dark:text-[#4F4665] py-2 px-4 rounded-full">
+          <Button className="bg-custom-radial dark:bg-dark-custom-radial duration-300 text-[#98EA98] dark:text-[#4F4665] py-2 px-4 rounded-full">
             <Link to="/contact">{t("hero.btn")}</Link>
-          </button>
+          </Button>
         </div>
         <div>
           <img src="https://ik.imagekit.io/ohgne7kibp/portfolio/Intersect.png?updatedAt=1716321270387" alt="it developer" />
@@ -54,7 +54,7 @@ const Home = () => {
         </div>
       </section>
       <section className="container flex flex-col items-center mt-10">
-        <h1 className="text-4xl">{t("section2.h1")}</h1>
+        <h1 className="text-4xl relative after:absolute after:w-full after:h-[2px] after:bg-secondary after:scale-x-0 after:-bottom-2 after:left-0 hover:after:scale-x-100 after:duration-300">{t("section2.h1")}</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 my-10">
           {cardsData.map((card, index) => (
             <MyCard key={index} img={card.img} alt={card.alt} text={card.text} path={card.path} />
@@ -62,7 +62,7 @@ const Home = () => {
         </div>
       </section>
       <section className="container py-10 flex flex-col items-center justify-center gap-5">
-        <h1 className="text-4xl">{t("contact.h1")}</h1>
+        <h1 className="text-4xl relative after:absolute after:w-full after:h-[2px] after:bg-secondary after:scale-x-0 after:-bottom-2 after:left-0 hover:after:scale-x-100 after:duration-300">{t("contact.h1")}</h1>
         <Card className="flex lg:flex-row flex-col items-center lg:items-start w-full bg-transparent shadow-none">
           <CardHeader
             shadow={false}

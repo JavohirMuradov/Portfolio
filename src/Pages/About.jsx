@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next"
 
 const About = () => {
-  var { t } = useTranslation()
+  var { t } = useTranslation("Home")
   return (
     <main className='bg-primary text-secondary'>
       <section className="container flex flex-col items-center lg:flex-row lg:items-start justify-between text-center lg:text-start py-10">

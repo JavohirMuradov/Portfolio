@@ -7,20 +7,16 @@ var en = {
             description: "EshikOyna represents a fusion of education and gaming, providing users with an immersive and interactive learning experience. Through the integration of HTML, Tailwind CSS, and JavaScript, the project showcases the developer's technical skills and creativity in web development. As both a learning tool and a demonstration of proficiency, EshikOyna stands as a testament to the developer's dedication to continuous learning and innovation in the field of web development.",
         },
         "Imba-Studio": {
-            description: "",
-            href: ""
+            description: "IMBA Studio offers a professional team of cameramen to capture your wedding day or any other important event in your life. Our experts are dedicated to creating high-quality videos that beautifully document your special moments. Whether it's a wedding, birthday, anniversary, or any other significant occasion, IMBA Studio ensures that every precious memory is preserved with creativity and precision. With state-of-the-art equipment and a keen eye for detail, we provide you with expertly crafted videos that allow you to relive your cherished memories for years to come. Trust IMBA Studio to make your special day unforgettable.",
         },
         "Where-is-the-country?": {
-            description: "",
-            href: ""
+            description: '"Where is the World?" is a comprehensive website designed to help you find detailed information about any country around the world. The site features an extensive database that provides information on various aspects such as geography, population, economy, culture, and more. One of the standout features of "Where is the World?" is its API, which is widely used for educational purposes. This API allows students to learn how to retrieve data from the backend and present it to users on the frontend. By using "Where is the World?", students can gain valuable hands-on experience in web development, data fetching, and API integration, making it a practical tool for both learning and exploration.',
         },
         "Scoot": {
-            description: "",
-            href: ""
+            description: "Scoot offers a convenient and efficient motorcycle rental service with a large fleet of motorcycles available at prime locations throughout the city. With Scoot, you can easily rent a motorcycle with just one click, making it an ideal solution for quick and flexible transportation. Whether you need a ride for commuting, errands, or exploring the city, Scoot provides a seamless and user-friendly experience. Our motorcycles are well-maintained and ready for your next adventure, ensuring you have a smooth and enjoyable ride every time.",
         },
         "Cafena": {
-            description: "",
-            href: ""
+            description: "Cafena is your ultimate destination for all things coffee. At our café, you can indulge in a wide variety of delicious coffee beverages made from the finest beans. But that's not all—Cafena also offers a range of technologies and accessories to help you make the perfect cup of coffee at home. From high-quality coffee machines and grinders to stylish mugs and brewing tools, we have everything you need to enhance your coffee experience. Whether you're a coffee enthusiast or a casual drinker, Cafena is the perfect place to enjoy and explore the world of coffee.",
         },
     },
     entering: {

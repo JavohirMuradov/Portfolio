@@ -7,7 +7,7 @@ import useDarkSide from "../utils/Theme/useDarkSide";
 const Footer = () => {
   var [colorTheme] = useDarkSide()
   return (
-    <footer className="bg-primary text-secondary duration-300 h-[12vh]">
+    <footer className="bg-primary text-secondary duration-300 py-5">
       <div className="container flex flex-row justify-between border-t border-t-secondary h-full pt-5 items-center">
         <h1 className="font-julia text-5xl"><Link to={"/"}>Java</Link></h1>
         <div className="flex flex-row items-center gap-2">

@@ -1,4 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 import { Helmet } from "react-helmet-async";
 import Layout from "./Layout/Layout";
 import Home from "./Pages/Home/Home";
@@ -7,6 +8,7 @@ import About from "./Pages/About";
 import Entering from "./Pages/Entering";
 import ExactProject from "./Pages/ExactProject";
 import Projects from "./Pages/Projects";
+import 'react-toastify/dist/ReactToastify.css';
 
 const getTitle = (pathname) => {
   switch (pathname) {
@@ -50,17 +52,8 @@ function App() {
         <title>{getTitle(pathname)}</title>
         <meta name="description" content={getDescription(pathname)} />
       </Helmet>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Entering />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/exactProject/:name" element={<ExactProject />} />
-        </Routes>
-      </Layout>
-      {/* <Routes>
+      <Routes>
+        <Route path="/" element={<Entering />} />
       </Routes>
       {pathname !== "/" && (
         <Layout>
@@ -70,10 +63,10 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/exactProject/:name" element={<ExactProject />} />
-          </Routes >
+          </Routes>
         </Layout >
-      )
-      } */}
+      )}
+      <ToastContainer />
     </>
   );
 }

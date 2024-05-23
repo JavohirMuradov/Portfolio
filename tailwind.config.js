@@ -13,6 +13,10 @@ export default withMT({
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
+        'dark-custom-radial': 'radial-gradient(71.04% 147.83% at 36.46% 0%, #9BEA9B 0%, #F6B5AC 31.05%, #7DC4C1 70.3%, #7DC4C1 100%)',
+        'dark-radial': 'radial-gradient(63.89% 63.89% at 50% 50%, #9BEA9B 0%, #F6B5AC 50%, #7DC4C1 100%)',
+        'custom-radial': 'radial-gradient(71.04% 147.83% at 36.46% 0%, #1E263F 0%, #2A2B3F 31.05%, #66444D 70.3%, #66444D 100%)',
+        "radial": "radial-gradient(63.89% 63.89% at 50% 50%, #66444D 0%, #1E263F 100%)",
       },
       backgroundImage: {
         'dark-custom-radial': 'radial-gradient(71.04% 147.83% at 36.46% 0%, #9BEA9B 0%, #F6B5AC 31.05%, #7DC4C1 70.3%, #7DC4C1 100%)',
@@ -20,6 +24,10 @@ export default withMT({
         'custom-radial': 'radial-gradient(71.04% 147.83% at 36.46% 0%, #1E263F 0%, #2A2B3F 31.05%, #66444D 70.3%, #66444D 100%)',
         "radial": "radial-gradient(63.89% 63.89% at 50% 50%, #66444D 0%, #1E263F 100%)",
       },
+      boxShadowColor: {
+        'dark-custom-radial': 'radial-gradient(71.04% 147.83% at 36.46% 0%, #9BEA9B 0%, #F6B5AC 31.05%, #7DC4C1 70.3%, #7DC4C1 100%)',
+        'custom-radial': 'radial-gradient(71.04% 147.83% at 36.46% 0%, #1E263F 0%, #2A2B3F 31.05%, #66444D 70.3%, #66444D 100%)',
+      }
     },
     fontFamily: {
       'forum': ["Forum"],
