@@ -27,9 +27,9 @@ const Contact = () => {
   var submit = (e) => {
     e.preventDefault()
     if (name || email || message) {
-      sendEmail()
+      return sendEmail()
     } else {
-      toast.error("Please enter name or email", {
+      return toast.error("Please enter name or email", {
         // progressClassName: "bg-primary",
         className: "text-primary bg-secondary",
       })
