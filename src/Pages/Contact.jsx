@@ -48,7 +48,7 @@ const Contact = () => {
             className="m-0 w-full lg:w-1/2 shrink-0"
           >
             <img
-              src="https://ik.imagekit.io/ohgne7kibp/portfolio/c1fe5b1d-d20f-4a7b-999e-942ea2581dfa.jpg?updatedAt=1716044398094"
+              src="hhttps://ik.imagekit.io/ohgne7kibp/portfolio/0bc49fd6-6df5-40dd-8f47-e56f496a2e9b.jpg?updatedAt=1716044398455"
               alt="card-image"
               className="h-full w-full object-cover"
             />
