@@ -40,7 +40,7 @@ const Contact = () => {
   return (
     <main className='bg-primary text-secondary font-forum'>
       <section className="container py-10 flex flex-col items-center justify-center gap-10 h-full pt-10">
-        <h1 className="text-4xl relative after:absolute after:w-full after:h-[2px] after:bg-secondary after:scale-x-0 after:-bottom-2 after:left-0 hover:after:scale-x-100 after:duration-300">{t("contact.h1")}</h1>
+        <h1 className="text-4xl relative after:absolute after:w-full after:h-[2px] after:bg-secondary after:scale-x-0 after:-bottom-2 after:left-0 hover:after:scale-x-100 after:duration-300 cursor-pointer">{t("contact.h1")}</h1>
         <Card className="flex lg:flex-row flex-col items-center lg:items-start w-full bg-transparent justify-between shadow-none">
           <CardHeader
             shadow={false}
