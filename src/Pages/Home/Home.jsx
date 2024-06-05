@@ -54,7 +54,7 @@ const Home = () => {
         </div>
       </section>
       <section className="container flex flex-col items-center mt-10">
-        <h1 className="text-4xl relative after:absolute after:w-full after:h-[2px] after:bg-secondary after:scale-x-0 after:-bottom-2 after:left-0 hover:after:scale-x-100 after:duration-300">{t("section2.h1")}</h1>
+        <h1 className="text-4xl relative after:absolute after:w-full after:h-[2px] after:bg-secondary after:scale-x-0 after:-bottom-2 after:left-0 hover:after:scale-x-100 after:duration-300 cursor-pointer">{t("section2.h1")}</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 my-10">
           {cardsData.map((card, index) => (
             <MyCard key={index} img={card.img} alt={card.alt} text={card.text} path={card.path} />
@@ -62,7 +62,7 @@ const Home = () => {
         </div>
       </section>
       <section className="container py-10 flex flex-col items-center justify-center gap-5">
-        <h1 className="text-4xl relative after:absolute after:w-full after:h-[2px] after:bg-secondary after:scale-x-0 after:-bottom-2 after:left-0 hover:after:scale-x-100 after:duration-300">{t("contact.h1")}</h1>
+        <h1 className="text-4xl relative after:absolute after:w-full after:h-[2px] after:bg-secondary after:scale-x-0 after:-bottom-2 after:left-0 hover:after:scale-x-100 after:duration-300 cursor-pointer">{t("contact.h1")}</h1>
         <Card className="flex lg:flex-row flex-col items-center lg:items-start w-full bg-transparent shadow-none">
           <CardHeader
             shadow={false}
