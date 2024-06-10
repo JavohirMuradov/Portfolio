@@ -1,6 +1,6 @@
+import { Suspense, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
-import { Helmet } from "react-helmet-async";
 import Layout from "./Layout/Layout";
 import Home from "./Pages/Home/Home";
 import Contact from "./Pages/Contact";
@@ -9,61 +9,45 @@ import Entering from "./Pages/Entering";
 import ExactProject from "./Pages/ExactProject";
 import Projects from "./Pages/Projects";
 import 'react-toastify/dist/ReactToastify.css';
-
-const getTitle = (pathname) => {
-  switch (pathname) {
-    case "/home":
-      return "Portfolio of Javohir Muradov(Java).";
-    case "/contact":
-      return "Portfolio of Javohir Muradov(Java).";
-    case "/about":
-      return "Portfolio of Javohir Muradov(Java).";
-    case "/projects":
-      return "Portfolio of Javohir Muradov(Java).";
-    case pathname.match(/^\/projects\/exactProject/)?.input:
-      return "Portfolio of Javohir Muradov(Java).";
-    default:
-      return "Portfolio of Javohir Muradov(Java).";
-  }
-};
-
-const getDescription = (pathname) => {
-  switch (pathname) {
-    case "/home":
-      return "Welcome to the Portfolio of Javohir Muradov.";
-    case "/contact":
-      return "Get in touch with me through my contact page.";
-    case "/about":
-      return "Learn more about Me and my mission.";
-    case "/projects":
-      return "Explore my projects and see what I've been working on.";
-    case pathname.match(/^\/projects\/exactProject/)?.input:
-      return "Detailed information about my projects.";
-    default:
-      return "Portfolio of Javohir Muradov(Java).";
-  }
-};
+import "aos/dist/aos.css";
 function App() {
   const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
+  useEffect(() => {
+    const loadAOS = async () => {
+      const AOS = await import("aos");
+      AOS.init({
+        duration: 600,
+        once: true,
+        disable: function () {
+          var maxWidth = 800;
+          return window.innerWidth < maxWidth;
+        },
+      });
+    };
+    loadAOS();
+  }, []);
   return (
     <>
-      <Helmet>
-        <title>{getTitle(pathname)}</title>
-        <meta name="description" content={getDescription(pathname)} />
-      </Helmet>
-      <Routes>
-        <Route path="/" element={<Entering />} />
-      </Routes>
+      <Suspense>
+        <Routes>
+          <Route path="/" element={<Entering />} />
+        </Routes>
+      </Suspense>
       {pathname !== "/" && (
         <Layout>
-          <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/exactProject/:name" element={<ExactProject />} />
-          </Routes>
+          <Suspense>
+            <Routes>
+              <Route path="/home" element={<Home />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/exactProject/:name" element={<ExactProject />} />
+            </Routes>
+          </Suspense>
         </Layout >
       )}
       <ToastContainer />

@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react"
+import { Helmet } from "react-helmet-async"
 import { useTranslation } from "react-i18next"
-import { Link, useLocation } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 const ExactProject = () => {
-    const { pathname } = useLocation()
+    const { name } = useParams()
     const [project, setProject] = useState("")
     const { t } = useTranslation("exact-project")
-
+    console.log(name);
     useEffect(() => {
         const pathProjectMap = {
-            "/projects/exactProject/42": "42.uz",
-            "/projects/exactProject/Eshik_Oyna": "Eshik Oyna",
-            "/projects/exactProject/Imba_Studio": "Imba Studio",
-            "/projects/exactProject/Where_is_the_country": "Where is the country?",
-            "/projects/exactProject/Scoot": "Scoot",
-            "/projects/exactProject/Cafena": "Cafena",
-            // Add other paths here if needed
+            "42": "42.uz",
+            "eshik_oyna": "Eshik Oyna",
+            "imba_studio": "Imba Studio",
+            "where_is_the_country": "Where is the country?",
+            "scoot": "Scoot",
+            "cafena": "Cafena",
         }
-        setProject(pathProjectMap[pathname] || "")
-    }, [pathname])
+        setProject(pathProjectMap[name] || "")
+    }, [name])
 
     const getImageSource = (project) => {
         const projectImageMap = {
@@ -65,23 +65,31 @@ const ExactProject = () => {
     const project1 = getImageSource(project)
 
     return (
-        <section className="w-full h-full py-10 bg-primary flex flex-row items-center justify-center text-secondary duration-300 text-center pt-10">
-            <div className="container flex flex-col items-center justify-between gap-10 h-full">
-                <h1 className="text-5xl">{project1.name}</h1>
-                <div className="flex flex-col items-center justify-between gap-10">
-                    <div className="w-full">
-                        {project1 && <img src={project1.img} className="w-full" alt={project.name} />}
-                    </div>
-                    <div className="w-full flex flex-col gap-3">
-                        <h1 className="text-3xl">{project1.name}</h1>
-                        <p className="text-lg">{project1.description}</p>
-                        <Link to={project1.href}>
-                            <button className="bg-custom-radial dark:bg-dark-custom-radial text-primary text-md py-2 px-4 rounded-full">{project1.name}</button>
-                        </Link>
+        <>
+            <Helmet>
+                <title>Portfolio of Javohir Muradov(Java).</title>
+                <meta name="description" content="Detailed information about my projects." />
+                <meta name="og:title" content="Portfolio of Javohir Muradov(Java)." />
+                <meta name="og:description" content="Detailed information about my projects." />
+            </Helmet>
+            <section className="w-full h-full py-10 bg-primary flex flex-row items-center justify-center text-secondary duration-300 text-center pt-10">
+                <div className="container flex flex-col items-center justify-between gap-10 h-full">
+                    <h1 className="text-5xl">{project1.name}</h1>
+                    <div className="flex flex-col items-center justify-between gap-10">
+                        <div className="w-full">
+                            {project1 && <img src={project1.img} className="w-full" alt={project.name} />}
+                        </div>
+                        <div className="w-full flex flex-col gap-3">
+                            <h1 className="text-3xl">{project1.name}</h1>
+                            <p className="text-lg">{project1.description}</p>
+                            <Link to={project1.href}>
+                                <button className="bg-custom-radial dark:bg-dark-custom-radial text-primary text-md py-2 px-4 rounded-full">{project1.name}</button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     )
 }
 

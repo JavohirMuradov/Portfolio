@@ -42,6 +42,8 @@ var uz = {
         contact: {
             h1: "Men bilan bog'laning",
             send: "Menga email jonatшng",
+            h2: "Aloqada boʻling",
+            span: "Menga qo'ng'iroq qiling va keling, birgalikda yangilik va ijodkorlikning hayajonli sayohatini boshlaylik. Keyingi katta loyihangiz men har bir kod satrida ko'rsatadigan tafsilotlar va ishtiyoqqa loyiqdir.",
         },
         about: {
             h1: "Salom! Mening ismim Javohir Murodov, men 2010 yilda tug'ilgan front-end dasturchiman (ha, men yoshman, lekin dasturlashga ishtiyoqim chegara bilmaydi!).",
