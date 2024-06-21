@@ -50,7 +50,6 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000)
   }, []);
-  console.log(loading);
   return (
     <>
       <Helmet>
