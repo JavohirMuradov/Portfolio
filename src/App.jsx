@@ -22,10 +22,7 @@ function App() {
       AOS.init({
         duration: 600,
         once: true,
-        disable: function () {
-          var maxWidth = 800;
-          return window.innerWidth < maxWidth;
-        },
+        disable: 'mobile'
       });
     };
     loadAOS();
