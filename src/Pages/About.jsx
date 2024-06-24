@@ -1,8 +1,20 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async"
 import { useTranslation } from "react-i18next"
 
 const About = () => {
   var { t } = useTranslation("Home")
+  useEffect(() => {
+    const loadAOS = async () => {
+      const AOS = await import("aos");
+      AOS.init({
+        duration: 600,
+        once: true,
+        disable: 'mobile'
+      });
+    };
+    loadAOS();
+  }, []);
   return (
     <>
       <Helmet>

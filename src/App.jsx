@@ -15,18 +15,6 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
-  useEffect(() => {
-    const loadAOS = async () => {
-      const AOS = await import("aos");
-      AOS.init({
-        duration: 600,
-        once: true,
-        disable: 'mobile'
-      });
-    };
-    loadAOS();
-  }, []);
   return (
     <>
       <Suspense>

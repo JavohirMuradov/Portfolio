@@ -1,5 +1,5 @@
 import emailjs from '@emailjs/browser';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   Card,
@@ -36,6 +36,17 @@ const Contact = () => {
       })
     }
   }
+  useEffect(() => {
+    const loadAOS = async () => {
+      const AOS = await import("aos");
+      AOS.init({
+        duration: 600,
+        once: true,
+        disable: 'mobile'
+      });
+    };
+    loadAOS();
+  }, []);
 
   return (
     <>

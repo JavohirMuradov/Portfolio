@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import MyCard from "./Home/Card";
 import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 const cardsData = [
   { img: "https://ik.imagekit.io/ohgne7kibp/portfolio/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-05-20%20190400.png?updatedAt=1716214070800", alt: "42.uz", text: "42.uz", path: "/projects/exactProject/42" },
@@ -12,6 +13,17 @@ const cardsData = [
 ];
 
 const Projects = () => {
+  useEffect(() => {
+    const loadAOS = async () => {
+      const AOS = await import("aos");
+      AOS.init({
+        duration: 600,
+        once: true,
+        disable: 'mobile'
+      });
+    };
+    loadAOS();
+  }, []);
   const { t } = useTranslation("Home")
   return (
     <>

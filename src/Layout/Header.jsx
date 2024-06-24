@@ -8,6 +8,7 @@ const Header = () => {
   const { t, i18n } = useTranslation("header");
   const [openNav, setOpenNav] = useState(false);
   const [language, setLanguage] = useState('en');
+  const [classs, setClasss] = useState(false)
 
   useEffect(() => {
     i18n.changeLanguage(language);
@@ -22,6 +23,7 @@ const Header = () => {
     { path: "/projects", label: t("li2") },
     { path: "/about", label: t("li3") }
   ];
+  console.log(language);
 
   return (
     <header className="bg-primary font-forum text-lg text-secondary sticky shadow-lg py-5 top-0 z-50 duration-300">
@@ -41,19 +43,18 @@ const Header = () => {
         </nav>
         <div className="flex gap-3 items-center">
           <Switcher />
-          <div className="relative">
-            <select
-              defaultValue="en"
-              onChange={(e) => setLanguage(e.target.value)}
-              className="bg-primary text-secondary appearance-none duration-300 text-xl pr-5 outline-none p-3"
-            >
-              <option value="en" className="p-3 bg-primary">en</option>
-              <option value="ru" className="p-3 bg-primary">ru</option>
-              <option value="uz" className="p-3 bg-primary">uz</option>
-            </select>
-            <svg className="absolute right-0 top-[23px]" width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1C3.64878 2.22939 5.12657 5.56889 6.55038 8.4134C7.18529 9.68183 8.8099 9.67912 9.45505 8.41587C10.9004 5.58574 12.4251 2.29115 15 1" className="stroke-secondary" strokeWidth="2" />
-            </svg>
+          <div className="relative cursor-pointer">
+              <button onClick={() => setClasss((prev) => prev === true ? false : true)} className="flex flex-row items-center gap-1">
+                <span>{language}</span>
+                <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1C3.64878 2.22939 5.12657 5.56889 6.55038 8.4134C7.18529 9.68183 8.8099 9.67912 9.45505 8.41587C10.9004 5.58574 12.4251 2.29115 15 1" className="stroke-secondary" strokeWidth="2" />
+                </svg>
+              </button>
+              <div className={`absolute bg-primary border border-secondary -left-2 ${classs === false ? "scale-y-0" : "scale-y-100"} duration-300`}>
+                <button onClick={() => setLanguage("en")} className="px-2 pr-3">en</button>
+                <button onClick={() => setLanguage("ru")} className="px-2 pr-3">ru</button>
+                <button onClick={() => setLanguage("uz")} className="px-2 pr-3">uz</button>
+              </div>
           </div>
           <IconButton
             variant="text"

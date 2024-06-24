@@ -28,7 +28,17 @@ const Home = () => {
   const [name, setName] = useState()
   const [email, setEmail] = useState()
   const [message, setMessage] = useState()
-  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const loadAOS = async () => {
+      const AOS = await import("aos");
+      AOS.init({
+        duration: 600,
+        once: true,
+        disable: 'mobile'
+      });
+    };
+    loadAOS();
+  }, []);
   const sendEmail = () => {
     emailjs
       .sendForm('service_vohzq3g', 'template_vjtsclf', form.current, {
@@ -47,9 +57,6 @@ const Home = () => {
       })
     }
   }
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 2000)
-  }, []);
   return (
     <>
       <Helmet>
